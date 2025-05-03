@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>變身資訊</title>
+  <style>
+    * {
+		box-sizing: border-box;
+    }
+
+    body {
+		margin: 0;
+		padding: 0;
+		background-image: url('poly.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		height: 100vh;
+		font-family: sans-serif;
+		color: white;
+    }
+
+	.sidebar {
+		position: absolute;
+		top: 310px;
+		left: 60px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		background-color: rgba(0, 0, 0, 0.1);
+		padding: 20px;
+		border-radius: 12px;
+    }
+
+    select {
+		width: auto;
+		max-width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 6px;
+    }
+
+	.dialog {
+		display: inline-block;       
+		white-space: nowrap;        
+		max-width: 100%;            
+		background-color: rgba(0, 0, 0, 0.2);
+		padding: 10px;
+		border-radius: 8px;
+		color: lightgreen;
+		font-weight: bold;
+		font-size: 18px;
+		text-shadow: 1px 1px 3px #000;
+		max-width: 100vw; 
+    }
+	</style>
+</head>
+<body>
+	<div class="sidebar">
+		<select id="equipment-select" onchange="updateInfo()">
+			<option value="">請選擇變身</option>
+				<option value="weapon1"> </option>
+				<option value="weapon2"> </option>
+				<option value="weapon3"> </option>
+				  
+			<option value="">請選擇防具</option>
+				<option value="">古代系列</option>
+				<option value="armor1">古老的鱗甲：</option>
+				<option value="armor2">古老的金屬盔甲：</option>
+				<option value="armor3">古老的皮盔甲</option>
+				<option value="armor4">古老的長袍</option>
+				<option value="">滅魔系列</option>
+				<option value="armor5">古老的鱗甲：</option>
+				<option value="armor6">古老的金屬盔甲：</option>
+				<option value="armor7">古老的皮盔甲</option>
+				<option value="armor8">古老的長袍</option>
+		</select>
+		<div class="dialog" id="dialog">請選擇項目以查看說明
+		</div>
+	</div>
+
+	<script>
+		function updateInfo() {
+			const value = document.getElementById("equipment-select").value;
+			const dialog = document.getElementById("dialog");
+			const data = {
+				weapon1: "生命之劍：<br>	攻擊力：18/10、安定值：9<br>體質+5、精神+5、魅力+5<br>攻擊成攻+10<br>魔法攻擊+2",
+				weapon2: "	",
+				weapon3: "	",
+						
+				armor1: "古老的鱗甲：<br>",
+				armor2: "古老的金屬盔甲：",
+				armor3: "古老的皮盔甲"
+				armor4: "古老的長袍"
+			};
+			dialog.innerHTML = data[value] || "← 請選擇一項裝備以查看說明";
+		}
+	</script>
+</body>
+</html>

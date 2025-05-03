@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>爪爪天堂</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('index.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .button-container {
+      margin-bottom: 40px;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-button {
+      width: 280px;
+      height: 280px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-button:hover {
+      transform: scale(1.1) rotate(15deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="button-container">
+    <a href="update.html"><img src="btn_update.png" alt="Update" class="nav-button"></a>
+    <a href="equipment.html"><img src="btn_equipment.png" alt="Equipment" class="nav-button"></a>
+    <a href="poly.html"><img src="btn_poly.png" alt="Poly" class="nav-button"></a>
+    <a href="setting.html"><img src="btn_setting.png" alt="Setting" class="nav-button"></a>
+	 <a href="dl.html"><img src="btn_dl.png" alt="dl" class="nav-button"></a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>裝備資訊</title>
+  <style>
+    * {
+		box-sizing: border-box;
+    }
+
+    body {
+		margin: 0;
+		padding: 0;
+		background-image: url('equipment.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		height: 100vh;
+		font-family: sans-serif;
+		color: white;
+    }
+
+	.sidebar {
+		position: absolute;
+		top: 450px;
+		left: 60px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		background-color: rgba(0, 0, 0, 0.1);
+		padding: 20px;
+		border-radius: 12px;
+    }
+
+    select {
+		width: auto;
+		max-width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 6px;
+    }
+
+	.dialog {
+		display: inline-block;       
+		white-space: nowrap;        
+		max-width: 100%;            
+		background-color: rgba(0, 0, 0, 0.2);
+		padding: 10px;
+		border-radius: 8px;
+		color: lightgreen;
+		font-weight: bold;
+		font-size: 18px;
+		text-shadow: 1px 1px 3px #000;
+		max-width: 100vw; 
+    }
+	</style>
+</head>
+<body>
+	<div class="sidebar">
+		<select id="equipment-select" onchange="updateInfo()">
+			<option value="">　　請選擇項目　　</option>
+			<option value="">＝＝＝＝武器＝＝＝＝</option>
+			<option value="">匕首</option>
+			<option value="">劍</option>
+			<option value="sword1">　生命之劍</option>
+			<option value="sword2">2 </option>
+			<option value="sword3">3 </option>
+			<option value="">長矛</option>
+			<option value="singlespear1">　獨角獸之角</option>			
+			<option value="">弓弩</option>
+			<option value="">斧頭</option>
+			<option value="">棍/杖</option>
+			<option value="">雙刀/雙爪</option>
+			<option value="">奇古獸</option>
+			<option value="">鎖鏈劍</option>			
+			
+			
+			<option value="">＝＝＝＝防具＝＝＝＝</option>
+				<option value="">古代系列</option>
+				<option value="armor1">　古老的鱗甲</option>
+				<option value="armor2">　古老的金屬盔甲</option>
+				<option value="armor3">　古老的皮盔甲</option>
+				<option value="armor4">　古老的長袍</option>
+				<option value="">滅魔系列</option>
+				<option value="armor5">　滅魔鱗甲</option>
+				<option value="armor6">　滅魔金屬盔甲</option>
+				<option value="armor7">　滅魔藤甲</option>
+				<option value="armor8">　滅魔批肩</option>
+		</select>
+		<div class="dialog" id="dialog">請選擇一項裝備以查看說明
+		</div>
+	</div>
+
+	<script>
+		function updateInfo() {
+			const value = document.getElementById("equipment-select").value;
+			const dialog = document.getElementById("dialog");
+			const data = {
+				sword1: "可使用職業: 王族、騎士、法師、妖精<br><br>攻擊力:18/10、攻擊距離:1、安定值:9<br>體質+5、精神+5、魅力+5<br>攻擊成功+10、魔法攻擊+2<br>加速道具<br>額外血量+50",
+				sword2: "	",
+				sword3: "	",
+
+				singlespear1: "可使用職業: 王族、騎士、妖精、龍騎士<br><br> 攻擊力:20/18、安定值0<br>敏捷+3<br>HP+50、MP+50、MPR+10<br>攻擊成功+5、攻擊傷害+3、魔法防禦+30<br>加速道具<br>額外近距傷害命中+3",
+
+						
+				armor1: "可使用職業: 王族、黑暗妖精、龍騎士<br><br>AC-14、HP+300、MP+200、HPR+50、MPR+16<br>傷害減免+3、傷害+5、攻擊成功+5、<br>四屬性+5、石化抗性+2、睡眠抗性+2、冰凍抗性+2",
+				armor2: "可使用職業: 騎士、戰士 <br><br>AC-20、HP+500、HPR+100<br>魔法防禦+10、魔法防禦+5<br>暈眩抗性+2、石化抗性+2、睡眠抗性+2、冰凍抗性+2",
+				armor3: "可使用職業: 妖精、黑暗妖精、龍騎士、幻術師<br><br>AC-14、HP+300、MP+200、HPR+50、MPR+32<br>傷害減免+1、攻擊成功+3、攻擊傷害+3、遠距攻擊成功+5、遠距攻擊傷害+5",
+				armor4: "可使用職業: 法師、幻術師<br><br>AC-10、MP+500、MPR+60<br>魔法攻擊力+2",
+				
+				armor5: "可使用職業: 王族、妖精、黑暗妖精、龍騎士<br><br>AC-18<br>HP+500、MP+300、HPR+50、MPR+40、<br>力量+2、敏捷+1<br>魔法防禦+10、傷害減免+5<br>近距攻擊成功+8、近距攻擊傷害+8<br>遠距攻擊成功+5、遠距攻擊傷害+5<br>水屬性防禦+10、風屬性防禦+10、火屬性防禦+10、地屬性防禦+10<br>睡眠抗性+1<br>額外魔防+5、額外血量+20額外魔量+30、額外傷害減免+1、額外近距傷害命中+1",
+				armor6: "可使用職業: 騎士、戰士<br><br>AC-23<br>HP+700、HPR+90<br>魔法防禦+20、傷害減免+10<br>近距攻擊成功+3、近距攻擊傷害+3<br>暈眩抗性+1、石化抗性+1冰凍抗性+1<br>額外魔防+10、額外血量+50、額外傷害減免+2、額外近距傷害命中+1",
+				armor7: "可使用職業: 妖精、黑暗妖精、龍騎士<br><br>AC-18<br>HP+300、MP+500、HPR+30、MPR+60<br>力量+1、敏捷+2<br>魔法攻擊力+1、魔法防禦+10、傷害減免+3<br>近距攻擊成功+5、近距攻擊傷害+5<br>遠距攻擊成功+8、遠距攻擊傷害+8<br>睡眠抗性+1<br>額外魔防+5、額外血量+30、額外魔量+20、額外傷害減免+1、額外遠距傷害命中+1",
+				armor8: "可使用職業: 法師、幻術師<br><br>AC-12<br>MP+800、MPR+90<br>智力+3<br>魔法攻擊力+3、魔法防禦+12<br>致盲抗性+1<br>額外魔防+7、額外魔攻+1、額外魔量+50",
+			};
+			dialog.innerHTML = data[value] || "← 請選擇一項裝備以查看說明";
+		}
+	</script>
+</body>
+</html>
