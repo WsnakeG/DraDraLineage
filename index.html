@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>爪爪天堂</title>
@@ -7,31 +7,25 @@
     html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    a.fullscreen-link {
+      display: block;
       width: 100%;
       height: 100%;
     }
-
-    body {
-      background-image: url('index.jpg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: 100% 100%; /* ✅ 確保延展，不會重複或留白 */
-      cursor: pointer;            /* ✅ 滑鼠變手型 */
-    }
-
-    #link {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 99;
-      text-decoration: none;
+    a.fullscreen-link img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: index;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <a href="cover.html" id="link"></a>
+  <a class="fullscreen-link" href="cover.html" target="_blank">
+    <img src="index.jpg" alt="背景圖片">
+  </a>
 </body>
 </html>
