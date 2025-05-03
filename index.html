@@ -7,20 +7,23 @@
     html, body {
       margin: 0;
       padding: 0;
+      background-color: black;
+      width: 100%;
       height: 100%;
+      overflow: hidden;
     }
-    a.fullscreen-link {
-      display: block;
-      width: 100vw;
-      height: 100vh;
-      background-image: url('index.jpg');
-      background-size: cover;         /* ✅ 撐滿畫面 */
-      background-position: center;    /* ✅ 保持置中 */
-      background-repeat: no-repeat;
+    .fullscreen {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* ✅ 顯示整張圖不裁切 */
     }
   </style>
 </head>
 <body>
-  <a class="fullscreen-link" href="cover.html" target="_blank"></a>
+  <a href="cover.html" target="_blank">
+    <img src="index.jpg" alt="背景" class="fullscreen">
+  </a>
 </body>
 </html>
