@@ -22,7 +22,7 @@
 
 	.sidebar {
 		position: absolute;
-		top: 310px;
+		top: 450px;
 		left: 60px;
 		display: flex;
 		flex-direction: column;
@@ -62,24 +62,41 @@
 <body>
 	<div class="sidebar">
 		<select id="equipment-select" onchange="updateInfo()">
-			<option value="">請選擇變身</option>
-				<option value="weapon1"> </option>
-				<option value="weapon2"> </option>
-				<option value="weapon3"> </option>
-				  
-			<option value="">請選擇防具</option>
-				<option value="">古代系列</option>
-				<option value="armor1">古老的鱗甲：</option>
-				<option value="armor2">古老的金屬盔甲：</option>
-				<option value="armor3">古老的皮盔甲</option>
-				<option value="armor4">古老的長袍</option>
-				<option value="">滅魔系列</option>
-				<option value="armor5">古老的鱗甲：</option>
-				<option value="armor6">古老的金屬盔甲：</option>
-				<option value="armor7">古老的皮盔甲</option>
-				<option value="armor8">古老的長袍</option>
+			<option value="">　　請選擇項目　　</option>
+			<option value="">＝＝＝低階變身＝＝＝</option>
+				<option value="p12283">　特羅斯</option>
+				<option value="p12280">　格立特</option>
+				<option value="p12295">　喬</option>		
+				<option value="p12314">　絲莉安</option>	
+			
+			
+			<option value="">＝＝＝中階變身＝＝＝</option>
+				<option value="p362">　紅燄死騎</option>
+				<option value="p363">　藍燄死騎</option>
+				<option value="p364">　赤燄死騎</option>
+				<option value="p17606">　趙雲</option>
+				<option value="p17601">　雷妮雅</option>
+				<option value="p17611">　巫女</option>
+				<option value="p17616">　魔劍士</option>
+				<option value="p17621">　波爾卡</option>
+				<option value="p17626">　仙俠</option>
+				<option value="p17631">　神劍大師</option>
+				<option value="p17636">　暗黑騎士</option>
+				<option value="p17641">　世拉</option>
+				<option value="p12286">　依詩蒂</option>
+				<option value="p395">　絲莉安</option>
+				
+			<option value="">＝＝＝高階變身＝＝＝</option>
+				<option value="p365">　真。紅燄死騎</option>
+				<option value="p366">　真。藍燄死騎</option>
+				<option value="p367">　真。赤燄死騎</option>
+				<option value="p396">　真。絲莉安</option>
+				<option value="p17646">　暗黑龍絲莉</option>
+				<option value="p17651">　暗黑龍宙斯</option>
+				<option value="p17656">　暗黑龍阿頓</option>	
+			
 		</select>
-		<div class="dialog" id="dialog">請選擇項目以查看說明
+		<div class="dialog" id="dialog">請選擇一項變身以查看說明
 		</div>
 	</div>
 
@@ -88,16 +105,39 @@
 			const value = document.getElementById("equipment-select").value;
 			const dialog = document.getElementById("dialog");
 			const data = {
-				weapon1: "生命之劍：<br>	攻擊力：18/10、安定值：9<br>體質+5、精神+5、魅力+5<br>攻擊成攻+10<br>魔法攻擊+2",
-				weapon2: "	",
-				weapon3: "	",
+				p12283: "可裝備武器:<br>匕首、單手劍、雙手劍、<br>斧、矛、雙刀、雙爪、鎖鏈劍",
+				p12280: "可裝備武器:<br>雙刀、雙爪",
+				p12295: "可裝備武器:<br>杖、奇古獸",
+				p12314: "可裝備武器:<br>弓",
+
 						
-				armor1: "古老的鱗甲：<br>",
-				armor2: "古老的金屬盔甲：",
-				armor3: "古老的皮盔甲"
-				armor4: "古老的長袍"
-			};
-			dialog.innerHTML = data[value] || "← 請選擇一項裝備以查看說明";
+				p362: "可裝備武器:<br>匕首、單手劍、雙手劍<br><br>斧、矛、雙刀、雙爪、鎖鏈劍<br><br>HP+150、MP+50、HPR+20、MPR+5<br>近距離傷害+3、近距離命中+3<br>傷害增加+2、減傷+3、魔法防禦+5",
+				p363: "可裝備武器:<br>杖、奇古獸<br><br>HP+150、MP+50、MPR+10<br>近距離命中+2、魔法減傷+3、魔法攻擊2",
+				p364: "可裝備武器:<br>弓<br><br>HP+150、MP+50、HPR+10、MPR+7<br>遠距離傷害+3、遠距離命中+2、減傷+2、魔法減傷+2",
+				p17606: "可裝備武器:<br>矛、鎖鏈劍<br><br>HP+800、MP+50、HPR+50、MPR+5<br>力量+3、近距離命中+3、傷害增加+2<br>減傷+10、魔法減傷+10、魔法防禦+25<br>火屬性防禦+30、風屬性防禦+30、地屬性防禦+30、水屬性防禦+30",
+				p17601: "可裝備武器:<br>匕首、單手劍、雙手劍<br><br>斧、杖、雙刀、雙爪、奇古獸<br><br>HP+150、MP+150、HPR+20、MPR+5<br>力量+1、體質+1、防禦-5<br>近距離傷害+2、近距離命中+2、傷害增加+5、魔法攻擊+1<br>減傷+2、魔法減傷+2、魔法防禦+5",
+				p17611: "可裝備武器:<br>杖、奇古獸<br><br>MP+500、MPR+15<br>智力+3、魔法攻擊+3",
+				p17616: "可裝備武器:<br>單手劍、雙手劍、鎖鏈劍<br><br>HP+300、MP+500、HPR+10、MPR+50<br>力量+2、智力+2<br>近距離傷害+2、魔法攻擊+5<br>火屬性防禦+15、風屬性防禦+15、地屬性防禦+15、水屬性防禦+15",
+				p17621: "可裝備武器:<br>匕首、單手劍<br><br>HP+150、MP+50、HPR+5、MPR+15<br>力量+2、敏捷+2、智力+2<br>近距離傷害+2、近距離命中+2、傷害增加+5、魔法攻擊+3<br>減傷+5、魔法防禦+25",
+				p17626: "可裝備武器:<br>杖、弓、奇古獸<br><br>MP+300、MPR+30<br>敏捷+3、智力+3、魅力+3<br>遠距離傷害+3、遠距離命中+5、傷害增加+5、魔法攻擊+2",
+				p17631: "可裝備武器:<br>匕首、單手劍、杖<br><br>HP+150、MP+300、HPR+5、MPR+5<<br>力量+2、智力+2、防禦-5<br>近距離傷害+3、近距離命中+3、魔法攻擊+3",
+				p17636: "可裝備武器:<br>雙刀、雙爪<br><br>HP+300、MP+300、HPR+15、MPR+15<br>力量+3、敏捷+3、體質+3<br>近距離傷害+5、近距離命中+5、傷害增加+15、魔法防禦+15",
+				p17641: "可裝備武器:<br>匕首、杖、雙刀、雙爪<br><br>MP+800、MPR+50<br>智力+3、魔法攻擊+5<br>魔法防禦+15、火屬性防禦+50、風屬性防禦+50、地屬性防禦+50、水屬性防禦+50",
+				p12286: "可裝備武器:<br>杖、奇古獸<br><br>MPR+50、智力+5、精神+5、魅力+5",
+				p395: "可裝備武器:<br>弓<br><br>HP+150、MP+50、HPR+15、MPR+15<br>敏捷+1、智力+1<br>遠距離傷害+5、遠距離命中+5",
+				
+				
+				p365: "可裝備武器:<br>匕首、單手劍、雙手劍、斧、矛、雙刀、雙爪、鎖鏈劍<br><br>HP+300、MP+100、HPR+35、MPR+10<br>力量+3、敏捷+3<br>近距離傷害+7、近距離命中+7、傷害增加+5<br>減傷+5、魔法防禦+10",
+				p366: "可裝備武器:<br>杖、奇古獸<br><br>HP+300、MP+100、HPR+5、MPR+20<br>力量+3、智力+3<br>近距離命中+5、魔法攻擊+5<br>魔法減傷+5",
+				p367: "可裝備武器:<br>弓<br><br>HP+300、MP+100、HPR+15、MPR+15<br>敏捷+3、智力+3<br>遠距離傷害+7、遠距離命中+7<br>減傷+3、魔法減傷+3、魔法防禦+5",
+				p396: "可裝備武器:<br>弓<br><br>HP+300、MP+100、HPR+30、MPR+25<br>敏捷+5、智力+1<br>遠距離傷害+10、遠距離命中+10、魔法防禦+5",
+				p17646: "可裝備武器:<br>弓<br><br>HP+350、MP+350、HPR+50、MPR+50<br>敏捷+5<br>遠距離傷害+10、遠距離命中+10<br>減傷+10、魔法減傷+10、魔法防禦+10<br>火屬性防禦+10、風屬性防禦+10、地屬性防禦+10、水屬性防禦+10",
+				p17651: "可裝備武器:<br>杖、奇古獸<br><br>MP+500、MPR+80<br>智力+5<br>魔法攻擊+8、魔法防禦+15<br>火屬性防禦+30、風屬性防禦+30、地屬性防禦+30、水屬性防禦+30",
+				p17656: "可裝備武器:<br>單手劍、雙手劍、雙刀、雙爪<br><br>HP+500、HPR+80、MPR+20<br>力量+5<br>近距離傷害+10、近距離命中+10<br>減傷+10、魔法減傷+25、魔法防禦+30<br>火屬性防禦+20、風屬性防禦+20、地屬性防禦+20、水屬性防禦+20",
+
+				
+		};
+			dialog.innerHTML = data[value] || "← 請選擇一項變身以查看說明";
 		}
 	</script>
 </body>
